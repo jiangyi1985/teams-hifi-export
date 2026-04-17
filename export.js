@@ -39,7 +39,11 @@
     console.log("✅ Reached the top! Starting image conversion...");
 
     // 3. Your Base64 Image Conversion Logic
-    const images = document.querySelectorAll('img');
+    const images = document.querySelectorAll('img'); 
+    console.log("Found " + images.length + " img tags.");  
+    
+    let loadedImageCount = 0;
+
     for (let img of images) {
         if (img.src.startsWith('data:') || !img.src) continue;
         try {
@@ -51,10 +55,14 @@
                 reader.readAsDataURL(blob);
             });
             img.src = base64Data;
+
+            loadedImageCount++;
         } catch (e) {
             console.warn("Could not convert image:", img.src);
         }
     }
+
+    console.log("Loaded " + loadedImageCount + " images.");
 
     // // 4. Final Layout Flattening for MHTML
     // viewport.style.height = 'auto';
