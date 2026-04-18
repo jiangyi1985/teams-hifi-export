@@ -43,8 +43,8 @@ then...
 You are here. Congratulation!
 
 ## How to use
-1. Run `export.js` in DevTool console
-2. Save as .mhtml
-3. Open and run `view.js` in DevTool console
+1. Open a conversation in Teams web, run `export.js` in DevTool console
+2. Save page as .mhtml
+3. Open the backup file and run `view.js` in DevTool console
 
 Enjoy~
